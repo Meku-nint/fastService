@@ -40,7 +40,6 @@ export const addProduct = [
             res.status(201).json({ message: 'Product added successfully' });
         } catch (error) {
             console.error(error);
-            console.log(error.message);
             res.status(500).json({ message: 'Error adding product'});
         }
     }
@@ -212,7 +211,6 @@ export const deleteOrder = async (req, res) => {
         res.status(200).json({ message: "The order was successfully deleted" });
 
     } catch (error) {
-        console.error(error); 
         res.status(500).json({ message: "An error occurred while deleting the order" });
     }
 }
@@ -229,8 +227,7 @@ export const deleteProducts=async(req,res)=>{
             const imagePath = path.join(__dirname, '../uploads', imageName);
             fs.unlink(imagePath, (err) => {
                 if (err) {
-                  console.error(err);
-                }
+                  console.error(err);}
               });
          }        
         res.status(200).json({message: "The product is deleted"});
@@ -277,7 +274,6 @@ export const auth = (req, res, next) => {
     try {
         const decoded = jsonwebtoken.verify(token, process.env.JWT_SECRET);
         req.user = decoded;
-        console.log(token);
         next();
         
     } catch (error) {
