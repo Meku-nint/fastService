@@ -10,7 +10,7 @@ const Feedback = () => {
 
   const deleteFeedbackHandler = async (feedbackId) => {
     try {
-      const res = await axios.delete('http://localhost:3000/abc/deleteFeedback', { data: { feedbackId } });
+      const res = await axios.delete('https://fastservice.onrender.com/abc/deleteFeedback', { data: { feedbackId } });
       setResponse(res.data.message);
       setFeedbacks(feedbacks.filter((feedback) => feedback._id !== feedbackId));
     } catch (error) {
@@ -21,7 +21,7 @@ const Feedback = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/abc/fetchFeedback');
+        const res = await axios.get('https://fastservice.onrender.com/abc/fetchFeedback');
         setFeedbacks(res.data);
       } catch (error) {
         console.log(error);

@@ -23,7 +23,7 @@ const Login = () => {
     event.preventDefault();
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/abc/loginAdmin", login);
+      const res = await axios.post("https://fastservice.onrender.com/abc/loginAdmin", login);
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         navigate('/home');

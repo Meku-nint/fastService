@@ -10,7 +10,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/abc/fetchOrders");
+        const res = await axios.get("https://fastservice.onrender.com/abc/fetchOrders");
         setReverseOrder(res.data.reverse());
       } catch (error) {
         console.error("Error fetching orders:", error);
@@ -21,7 +21,7 @@ const Orders = () => {
 
   const handleDelete = async (orderId) => {
     try {
-      const res = await axios.delete('http://localhost:3000/abc/deleteOrder', { data: { orderId } });
+      const res = await axios.delete('https://fastservice.onrender.com/abc/deleteOrder', { data: { orderId } });
       alert(res.data.message);
       setReverseOrder(reversOrder.filter(order => order._id !== orderId));
     } catch (error) {

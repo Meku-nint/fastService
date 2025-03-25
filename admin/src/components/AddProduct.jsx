@@ -28,7 +28,7 @@ const AddProduct = () => {
     formData.append('price', product.price);
     
     try {
-      const res = await axios.post('http://localhost:3000/abc/addProduct', formData, {
+      const res = await axios.post('https://fastservice.onrender.com/abc/addProduct', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

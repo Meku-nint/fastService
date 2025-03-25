@@ -24,7 +24,7 @@ const SignUpAdmin = () => {
         event.preventDefault();
         console.log(adminData);
         try {
-            const res = await axios.post("http://localhost:3000/abc/adminSignup", adminData);
+            const res = await axios.post("https://fastservice.onrender.com/abc/adminSignup", adminData);
             setResponse(res.data.message);
             setAdminData({
                 email: '',

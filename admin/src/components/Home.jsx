@@ -23,7 +23,7 @@ const Home = () => {
     }
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/abc/fetchProducts');
+        const res = await axios.get('https://fastservice.onrender.com/abc/fetchProducts');
         setProducts(res.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -41,7 +41,7 @@ const Home = () => {
   const editProduct = async (id) => {
     edited.productId = id;
     try {
-      await axios.patch('http://localhost:3000/abc/editProduct', edited);
+      await axios.patch('https://fastservice.onrender.com/abc/editProduct', edited);
       window.location.reload();      
       setEditProductId(null); 
     } catch (error) {
@@ -53,7 +53,7 @@ const Home = () => {
     try {
       const value = prompt('Are you sure you want to delete this product? (yes/no)');
       if (value !== 'yes') return;
-      await axios.delete('http://localhost:3000/abc/deleteProduct', { data: { productId } });
+      await axios.delete('https://fastservice.onrender.com/abc/deleteProduct', { data: { productId } });
       setProducts(products.filter((product) => product._id !== productId));
     } catch (error) {
       console.error(error.response?.data?.message || 'There was an issue deleting the product');
