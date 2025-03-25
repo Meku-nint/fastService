@@ -42,7 +42,6 @@ const Dashboard = () => {
                   <p className="text-gray-600"><strong>Date:</strong> {order.deliveryDate}</p>
                   <p className="text-gray-600"><strong>Time:</strong> {order.deliveryTime}</p>
                   <p className="text-gray-600"><strong>Payment:</strong> {order.paymentMethod}</p>
-                  <p className="text-gray-600"><strong>Additional Information:</strong> {order.additionalInformation}</p>
                 </div>
               </div>
               <button 

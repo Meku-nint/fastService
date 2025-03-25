@@ -129,45 +129,46 @@ const Home = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 mt-16">
       <div className="flex flex-wrap items-center justify-between mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
-        <div className="flex flex-wrap space-x-4 bg-red-300 rounded-md py-4 px-4">
-          <button
-            onClick={() => filterByCategory('All')}
-            className="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ease-in-out duration-300"
-          >
-            All Products
-          </button>
-          <button
-            onClick={() => filterByCategory('electronic device')}
-            className="cursor-pointer px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition ease-in-out duration-300"
-          >
-            Electronic Devices
-          </button>
-          <button
-            onClick={() => filterByCategory('cloth')}
-            className="cursor-pointer px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition ease-in-out duration-300"
-          >
-            Cloth & Shoes
-          </button>
-          <button
-            onClick={() => filterByCategory('food')}
-            className="cursor-pointer px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition ease-in-out duration-300"
-          >
-            Foods
-          </button>
-          <button
-            onClick={handleSort}
-            className="cursor-pointer px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 transition ease-in-out duration-300"
-          >
-            Sort by Price
-          </button>
-          <input
-          type="search"
-          placeholder="product name 🔍"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className="w-1/5 mt-4 sm:mt-0 px-2 py-2 border border-gray-300 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition ease-in-out duration-300"
-        />
-        </div>
+      <div className="flex flex-wrap space-x-2 bg-red-100 rounded-md py-4 px-2">
+
+<button
+  onClick={() => filterByCategory('electronic device')}
+  className="cursor-pointer px-2 py-2 m-4 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition ease-in-out duration-300"
+>
+  Electronic Devices
+</button>
+<button
+  onClick={() => filterByCategory('cloth')}
+  className="cursor-pointer px-2 m-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition ease-in-out duration-300"
+>
+  Cloth & Shoes
+</button>
+<button
+  onClick={() => filterByCategory('food')}
+  className="cursor-pointer px-2 py-2 m-4 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition ease-in-out duration-300"
+>
+  Foods
+</button>
+<button
+  onClick={handleSort}
+  className="cursor-pointer m-4 px-2 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 transition ease-in-out duration-300"
+>
+  Sort by Price
+</button>
+<button
+  onClick={() => filterByCategory('All')}
+  className="cursor-pointer px-2 py-2 m-4  bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ease-in-out duration-300"
+>
+  All Products
+</button>
+<input
+  type="search"
+  placeholder="product name 🔍"
+  value={searchTerm}
+  onChange={handleSearchChange}
+  className="w-full sm:w-1/3 mt-4 sm:mt-0 px-2 py-2 bg-white text-gray-800 border-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ease-in-out duration-300"
+/>
+</div>
       
       </div>
       <div>

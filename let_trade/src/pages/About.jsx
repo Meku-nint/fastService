@@ -33,11 +33,11 @@ const About = () => {
                 </li>
                 <li className="flex items-center text-gray-700 text-lg">
                   <FontAwesomeIcon icon={faEnvelope} className="mr-3 text-blue-500" />
-                  <a href="mailto:mw9334@gmail.com" className="hover:text-blue-600">mw9334@gmail.com</a>
+                  <a href="mailto:mw9334@gmail.com" target='_blank' className="hover:text-blue-600">mw9334@gmail.com</a>
                 </li>
                 <li className="flex items-center text-gray-700 text-lg">
                   <FontAwesomeIcon icon={faMessage} className="mr-3 text-blue-500" />
-                  <span>Telegram: <a href="https://t.me/telegram" className="hover:text-blue-600">@telegram</a></span>
+                  <span>Telegram: <a href="https://t.me/telegram" target="_blank" className="hover:text-blue-600">@telegram</a></span>
                 </li>
               </ul>
             </div>

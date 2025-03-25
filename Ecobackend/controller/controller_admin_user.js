@@ -4,6 +4,7 @@ import { User,Admin,Product, Feedback,Order} from '../models/models.js';
 import express from 'express';
 import multer from 'multer';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { error } from 'console';
 const __filename = fileURLToPath(import.meta.url);
@@ -28,10 +29,9 @@ export const addProduct = [
             if (!req.file) {
                 return res.status(400).json({ msg: 'No file uploaded' });
             }
-            const fileUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+            const fileUrl = `/uploads/${req.file.filename}`;
             const newProduct = new Product({
                 price,
-
                 desc,
                 category,
                 img_url: fileUrl,
@@ -223,6 +223,16 @@ export const deleteProducts=async(req,res)=>{
         if(!findProduct){
             return res.status(404).json({message:"There product is not found ."});
         }
+        const img_url=findProduct.img_url;
+         if(img_url){
+            const imageName = img_url.split('/').pop();
+            const imagePath = path.join(__dirname, '../uploads', imageName);
+            fs.unlink(imagePath, (err) => {
+                if (err) {
+                  console.error(err);
+                }
+              });
+         }        
         res.status(200).json({message: "The product is deleted"});
      } catch (error) {
         res.status(500).json({message:"Server problem"});
@@ -256,7 +266,7 @@ export const loginUser=async(req,res)=>{
     } catch (error) {
         res.status(500).json({message:"Server error"});
     }
-} 
+}
 export const auth = (req, res, next) => {
     const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
     

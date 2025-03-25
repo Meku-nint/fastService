@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
 const Feedback = () => {
   const [feedbackResponse, setFeedbackResponse] = useState('');
   const [feedback, setFeedback] = useState({
@@ -9,7 +8,6 @@ const Feedback = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-
   const feedbackHandler = (event) => {
     const { name, value } = event.target;
     setFeedback((prev) => {
@@ -19,7 +17,6 @@ const Feedback = () => {
       };
     });
   };
-
   const feedbackPost = async (event) => {
     event.preventDefault();
     setIsLoading(true);
