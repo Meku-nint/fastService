@@ -85,8 +85,8 @@ const Home = () => {
             className='flex flex-col items-center justify-center p-4 bg-gray-200 rounded-lg shadow-lg transition-transform transform hover:bg-gray-100 w-full sm:w-80'
           >
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCyeaNZhi9pxUHnqmr-5faSYhaQAWCR2PnhA&s"
-              alt='Product'
+              src="img_url"
+              alt='Product is not visible'
               className='w-full h-40 object-cover rounded-t-lg mb-4'
             />
             {editProductId === product._id ? (
