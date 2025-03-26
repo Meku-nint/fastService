@@ -41,7 +41,7 @@ const AddProduct = () => {
         price: ''
       });
     } catch (error) {
-      setResponse(error.response?.data?.message || 'Error adding product');
+      setResponse(error.response?.data?.message || 'adding product problem');
     }
   };
 
