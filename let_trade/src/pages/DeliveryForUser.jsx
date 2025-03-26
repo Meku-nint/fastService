@@ -24,7 +24,7 @@ const Delivery = () => {
     event.preventDefault();
     const token=localStorage.getItem('token');
     try {
-      const res=await axios.post("http://localhost:3000/abc/userOrders",order,{headers:{Authorization:`Bearer ${token}`}});
+      const res=await axios.post("https://devfastservice.onrender.com/abc/userOrders",order,{headers:{Authorization:`Bearer ${token}`}});
       console.log(res.data.message)
       setResponse(res.data.message);
       setOrder({
