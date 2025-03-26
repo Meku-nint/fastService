@@ -39,7 +39,6 @@ export const addProduct = [
             await newProduct.save();
             res.status(201).json({ message: 'Product added successfully' });
         } catch (error) {
-            console.error(error);
             res.status(500).json({ message: 'Error adding product'});
         }
     }
