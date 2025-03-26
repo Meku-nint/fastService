@@ -29,7 +29,7 @@ export const addProduct = [
             if (!req.file) {
                 return res.status(400).json({ msg: 'No file uploaded' });
             }
-            const fileUrl = `/uploads/${req.file.filename}`;
+            const fileUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
             const newProduct = new Product({
                 price,
                 desc,
