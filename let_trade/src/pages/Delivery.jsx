@@ -23,7 +23,7 @@ const Delivery = () => {
   const submitOrders = async (event) => {
     event.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/abc/orders", order);
+      const res = await axios.post("https://devfastservice.onrender.com/abc/orders", order);
       console.log(res.data.message);
       setResponse(res.data.message);
       setOrder({
