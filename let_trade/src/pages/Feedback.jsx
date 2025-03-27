@@ -22,7 +22,7 @@ const Feedback = () => {
     setIsLoading(true);
     setError('');
     try {
-      const res = await axios.post('https://devfastservice.onrender.com/abc/feedback', feedback);
+      const res = await axios.post('https://fastservice.onrender.com/abc/feedback', feedback);
       setFeedbackResponse(res.data.message);
       setFeedback({
         text: '',
