@@ -20,7 +20,7 @@ const SignInUp = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:3000/abc/loginuser', loginData);
+      const res = await axios.post('https://devfastservice.onrender.com/abc/loginuser', loginData);
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         navigate('/user');
@@ -38,7 +38,7 @@ const SignInUp = () => {
 
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/abc/signupuser', user);
+      const res = await axios.post('https://devfastservice.onrender.com/abc/signupuser', user);
       setResponseSignup(res.data.message || 'Signup successful! go to login page');
       setUser({ name: '', email: '', password: '' });
     } catch (error) {
