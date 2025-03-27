@@ -22,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/abc/fetchProducts');
+        const res = await axios.get('https://devfastservice.onrender.com/abc/fetchProducts');
         const productsWithQuantity = res.data.map((product) => ({
           ...product,
           quantity: 0,
@@ -103,7 +103,7 @@ const Home = () => {
       }
     }
     try {
-      const res = await axios.post('http://localhost:3000/abc/orders', orderData);
+      const res = await axios.post('https://devfastservice.onrender.com/abc/orders', orderData);
       console.log(res.data.message);
       setResponse(res.data.message);
     } catch (error) {
