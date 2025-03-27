@@ -28,7 +28,7 @@ const Home = () => {
         return;
       }
       try {
-        const res = await axios.get('https://devfastservice.onrender.com/abc/fetchproduct',{
+        const res = await axios.get('https://fastservice.onrender.com/abc/fetchproduct',{
           headers:{Authorization:`Bearer ${token}`}
         });
         const productsWithQuantity = res.data.map((product) => ({
@@ -101,7 +101,7 @@ const Home = () => {
           }
         }
     try {
-      const res=await axios.post("https://devfastservice.onrender.com/abc/orders",orderData);
+      const res=await axios.post("https://fastservice.onrender.com/abc/orders",orderData);
       console.log(res.data.message);
       setResponse(res.data.message);
     } catch (error) {
