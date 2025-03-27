@@ -10,7 +10,7 @@ const Dashboard = () => {
     const fetchOrders = async () => {
       const token = localStorage.getItem('token');
       try {
-        const res = await axios.get("https://devfastservice.onrender.com/abc/getOrders", {
+        const res = await axios.get("https://fastservice.onrender.com/abc/getOrders", {
           headers: {
             Authorization: `Bearer ${token}`,
           },    
